@@ -1,0 +1,84 @@
+.catalog-slider-img {
+    // display: flex;
+    &-wrap {
+        position: relative;
+        .tns-controls {
+            button {
+                position: absolute;
+                width: 55px;
+                height: 55px;
+                background: url('../img/catalog-slider/arrow.png') center center/auto no-repeat;
+                background-color: #FFFFFF;
+                box-shadow: 0px 4px 4px rgba(50, 50, 50, 0.25);
+                border: none;
+                outline: none;
+                font-size: 0;
+                border-radius: 100%;
+                top: calc(50% - 22.5px);
+                z-index: 1;
+
+                &[data-controls="prev"] {
+                    left: -10px;
+                    transform: rotate(-180deg);
+                    box-shadow: 0px -4px 4px rgba(50, 50, 50, 0.25);
+                }
+                &[data-controls="next"] {
+                    right: -10px;
+                }
+            }
+        }
+    }
+    &-item {
+        padding: 30px;
+        background: #8BD4FF;
+        width: 400px;
+        height: 200px;
+        display: flex;
+        position: relative;
+        align-items: flex-start;
+        margin: 0 auto;
+        &__img {
+            height: 137px;
+            // img {
+            //     // max-height: 100%;
+            // }
+        }
+        &__title {
+            display: block;
+            text-decoration: none;
+            margin-top: 30px;
+            font-size: 20px;
+            text-align: center;
+            color: #000000;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+            max-width: 216px;
+        }
+        &__buy {
+            padding: 0 10px 5px 0;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            bottom: 0;
+            right: 0;
+            position: absolute;
+            width: 173px;
+            height: 78px;
+            // background: #FFA401;
+            // border: 20px solid transparent; border-right: 20px solid green; 
+            // border-bottom: 20px solid green;
+            background: rgb(139,212,255);
+            // background: linear-gradient(
+            //     155deg
+            //     , #8bd4ff 51%, white 53%, #ffa401 55%);
+            font-size: 20px;
+            font-weight: bold;
+            background: linear-gradient(155deg, rgba(139,212,255,1) 52%, rgba(255,255,255,1) 53%, rgba(255,164,1,1) 54%);
+            a {
+                text-decoration: none;
+                color: #FFFFFF;
+            }
+        }
+    }
+}

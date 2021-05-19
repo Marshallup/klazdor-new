@@ -1,0 +1,43 @@
+.partners-slider {
+    &-section {
+        margin: 50px 0;
+    }
+    &-wrap {
+        .tns-horizontal.tns-subpixel > .tns-item {
+            vertical-align: middle;
+        }
+        position: relative;
+        .tns-controls {
+            button {
+                position: absolute;
+                width: 55px;
+                height: 55px;
+                background: url('../img/catalog-slider/arrow.png') center center/auto no-repeat;
+                background-color: #FFFFFF;
+                box-shadow: 0px 4px 4px rgba(50, 50, 50, 0.25);
+                border: none;
+                outline: none;
+                font-size: 0;
+                border-radius: 100%;
+                top: calc(50% - 22.5px);
+                z-index: 1;
+
+                &[data-controls="prev"] {
+                    left: -10px;
+                    transform: rotate(-180deg);
+                    box-shadow: 0px -4px 4px rgba(50, 50, 50, 0.25);
+                }
+                &[data-controls="next"] {
+                    right: -10px;
+                }
+            }
+        }
+    }
+    &-item {
+        &__img {
+            img {
+                margin: 0 auto;
+            }
+        }
+    }
+}

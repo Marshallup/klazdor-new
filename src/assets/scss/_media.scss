@@ -1,0 +1,19 @@
+@media screen and (max-width: 991px) {
+    .container {
+        padding: 0 25px;
+    }
+}
+@media screen and (max-width: 580px) {
+    .container {
+        padding: 0 10px;
+    }
+    .klazdor__title-h2 {
+        font-size: 16px;
+    }
+    .popular-categories-cards-item {
+        max-width: 145px;
+    }
+    .popular-categories-cards-item__desc {
+        font-size: 14px;
+    }
+}
