@@ -1,6 +1,31 @@
 header.header
 	.container
-		.header-body
+		.header-mobile
+			.header-mobile-row
+				.header-mobile-location
+					<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M15 14.375C14.1712 14.375 13.3763 14.0458 12.7903 13.4597C12.2042 12.8737 11.875 12.0788 11.875 11.25C11.875 10.4212 12.2042 9.62634 12.7903 9.04029C13.3763 8.45424 14.1712 8.125 15 8.125C15.8288 8.125 16.6237 8.45424 17.2097 9.04029C17.7958 9.62634 18.125 10.4212 18.125 11.25C18.125 11.6604 18.0442 12.0667 17.8871 12.4459C17.7301 12.825 17.4999 13.1695 17.2097 13.4597C16.9195 13.7499 16.575 13.9801 16.1959 14.1371C15.8167 14.2942 15.4104 14.375 15 14.375ZM15 2.5C12.6794 2.5 10.4538 3.42187 8.81282 5.06282C7.17187 6.70376 6.25 8.92936 6.25 11.25C6.25 17.8125 15 27.5 15 27.5C15 27.5 23.75 17.8125 23.75 11.25C23.75 8.92936 22.8281 6.70376 21.1872 5.06282C19.5462 3.42187 17.3206 2.5 15 2.5Z" fill="#323232"/>
+					</svg>
+					.header-location__text Санкт-Петербург
+				a(href="/").header-mobile-logo
+					img(src="./assets/img/icons/logo.png", alt="logo")
+				a(href="#").header-mobile-phone
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M4.82667 10.3867C6.74667 14.16 9.84 17.2533 13.6133 19.1733L16.5467 16.24C16.92 15.8667 17.44 15.76 17.9067 15.9067C19.4 16.4 21 16.6667 22.6667 16.6667C23.0203 16.6667 23.3594 16.8071 23.6095 17.0572C23.8595 17.3072 24 17.6464 24 18V22.6667C24 23.0203 23.8595 23.3594 23.6095 23.6095C23.3594 23.8595 23.0203 24 22.6667 24C16.6551 24 10.8897 21.6119 6.63891 17.3611C2.38809 13.1103 0 7.34491 0 1.33333C0 0.979711 0.140476 0.640573 0.390524 0.390524C0.640573 0.140476 0.979711 0 1.33333 0H6C6.35362 0 6.69276 0.140476 6.94281 0.390524C7.19286 0.640573 7.33333 0.979711 7.33333 1.33333C7.33333 3 7.6 4.6 8.09333 6.09333C8.24 6.56 8.13333 7.08 7.76 7.45333L4.82667 10.3867Z" fill="#323232"/>
+					</svg>
+			.header-mobile-row
+				.header-catalog-btn.header-catalog-btn--mobile
+					.header-catalog-btn__figure
+						span
+					.header-catalog-btn__text Меню
+				.header-search.header-search--mobile
+						.header-search__input-wrap
+							input.header-search__input(type="text" placeholder="Поиск")
+						.header-search__btn
+							<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M11.875 3.75C14.0299 3.75 16.0965 4.60602 17.6202 6.12976C19.144 7.65349 20 9.72012 20 11.875C20 13.8875 19.2625 15.7375 18.05 17.1625L18.3875 17.5H19.375L25.625 23.75L23.75 25.625L17.5 19.375V18.3875L17.1625 18.05C15.6882 19.3085 13.8134 19.9999 11.875 20C9.72012 20 7.65349 19.144 6.12976 17.6202C4.60602 16.0965 3.75 14.0299 3.75 11.875C3.75 9.72012 4.60602 7.65349 6.12976 6.12976C7.65349 4.60602 9.72012 3.75 11.875 3.75ZM11.875 6.25C8.75 6.25 6.25 8.75 6.25 11.875C6.25 15 8.75 17.5 11.875 17.5C15 17.5 17.5 15 17.5 11.875C17.5 8.75 15 6.25 11.875 6.25Z" fill="#323232"/>
+							</svg>
+		.header-body.header-desktop
 			.header-row.header-top
 				.header-location
 					<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -82,7 +107,7 @@ header.header
 	.header-big-menu-wrap
 		.container
 			.header-big-menu-inner
-				.header-big-menu
+				.header-big-menu.header-big-menu--desktop
 					.header-big-menu-left
 						a(href="#").header-big-menu-left__title Распродажа
 						ul.header-big-menu-left-list
@@ -177,4 +202,37 @@ header.header
 										a(href="#").header-big-menu-right-item-list__link 1 класс компрессии
 									li.header-big-menu-right-item-list__item
 										a(href="#").header-big-menu-right-item-list__link 2 класс компрессии
+				.header-big-menu.header-big-menu--mobile
+					.header-big-menu-breadcrumps
+						a(href="#").header-big-menu-breadcrumps-item
+							span Каталог
+						a(href="#").header-big-menu-breadcrumps-item
+							span Чулки
+					.header-big-menu__title Каталог
+					ul.header-big-menu-list
+						li.header-big-menu-list__item.header-big-menu-list__item--sale
+							a(href="#").header-big-menu-list__link Распродажа
+							span.header-big-menu-list__arrow
+							ul.header-big-menu-list
+								li.header-big-menu-list__item
+									a(href="#").header-big-menu-list__link Чулки
+									span.header-big-menu-list__arrow
+						li.header-big-menu-list__item
+							a(href="#").header-big-menu-list__link Корсеты и корректоры осанки
+							span.header-big-menu-list__arrow
+						li.header-big-menu-list__item.header-big-menu-list__item--active
+							a(href="#").header-big-menu-list__link Фиксаторы суставов
+							span.header-big-menu-list__arrow
+						li.header-big-menu-list__item
+							a(href="#").header-big-menu-list__link Компрессионный трикотаж
+							span.header-big-menu-list__arrow
+						li.header-big-menu-list__item
+							a(href="#").header-big-menu-list__link Ортопедические стельки
+							span.header-big-menu-list__arrow
+						li.header-big-menu-list__item
+							a(href="#").header-big-menu-list__link Бандажи
+							span.header-big-menu-list__arrow
+						li.header-big-menu-list__item
+							a(href="#").header-big-menu-list__link Бинты и кинезио-тейпы
+							span.header-big-menu-list__arrow
 				
