@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', function(event) {
+
+
     const mainSlider = tns({
         container: '.main-slider-body',
         items: 1,
@@ -28,6 +30,13 @@ document.addEventListener('DOMContentLoaded', function(event) {
         // "autoWidth": true,
         items: 2.3,
         responsive: {
+          200: {
+            "autoWidth": true,
+          },
+          460: {
+            items: 2.3,
+            "autoWidth": false
+          },
           500: {
             swipeAngle: true,
             edgePadding: 0,
@@ -109,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
       if (!animPending) {
         animPending = true;
 
-        const $this = $(this);
+        const $this = $('.header-catalog-btn');
         const className = 'header-catalog-btn--active';
         const bigMenuInner = $('.header-big-menu-inner');
         const bigMenu = $('.header-big-menu');
@@ -143,5 +152,100 @@ document.addEventListener('DOMContentLoaded', function(event) {
         const childList = $this.find('.footer-list').show(300)
       }
     });
+
+
+    let promotionsSlider;
+    let newsSlider;
+    let articlesSlider;
+    let flag = true;
+    let flagNews = true;
+    let flagArticles = true;
+
+    $(window).resize(function(event) {
+      checkWidthForSliders();
+    });
+
+    checkWidthForSliders();
+
+    function checkWidthForSliders() {
+      const width = $(window).width();
+
+      if (width < 650 && flag) {
+
+        flag = false;
+        promotionsSlider = tns({
+          container: '.articles-template',
+          items: 1.5,
+          slideBy: 1,
+          autoplay: false,
+          nav: false,
+          loop: false,
+          rewind: true,
+          gutter: 10,
+        });
+
+      } else if (width >= 650 && !flag) {
+
+        flag = true;
+        promotionsSlider.destroy();
+
+      };
+
+      if (width < 767 && flagNews) {
+
+        flagNews = false;
+        newsSlider = tns({
+          container: '.news-template',
+          items: 1.5,
+          slideBy: 1,
+          autoplay: false,
+          nav: false,
+          loop: false,
+          rewind: true,
+          gutter: 10,
+          responsive: {
+            410: {
+              items: 2
+            }
+          }
+        });
+
+      } else if (width >= 767 && !flagNews) {
+
+        flagNews = true;
+        newsSlider.destroy();
+
+      };
+
+
+      if (width < 789 && flagArticles) {
+
+        flagArticles = false;
+        articlesSlider = tns({
+          container: '#articles-block',
+          items: 1.5,
+          slideBy: 1,
+          autoplay: false,
+          nav: false,
+          loop: false,
+          rewind: true,
+          gutter: 10,
+          responsive: {
+            500: {
+              items: 2
+            }
+          }
+        });
+
+      } else if (width >= 789 && !flagArticles) {
+
+        flagArticles = true;
+        articlesSlider.destroy();
+
+      };
+
+
+
+    };
 
 });

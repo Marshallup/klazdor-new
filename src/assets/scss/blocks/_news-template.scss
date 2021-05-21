@@ -1,8 +1,16 @@
 .news-template {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    margin-bottom: -20px;
+    // justify-content: space-between;
     &-item {
+        // margin-right: 30px;
+        &-wrap {
+            margin-bottom: 20px;
+            min-width: 215px;
+            flex-basis: 25%;
+            padding-right: 10px;
+        }
         &__date {
             margin: 10px 0;
             font-size: 16px;

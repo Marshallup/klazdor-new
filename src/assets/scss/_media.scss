@@ -4,6 +4,9 @@
         padding: 10px;
         // padding: 20px 10px 10px 20px;
     }
+    .articles-template-item {
+        max-width: 330px;
+    }
 }
 @media screen and (max-width: 1280px) {
     .header-big-menu {
@@ -32,6 +35,16 @@
     }
     .catalog-slider-img-item__title {
         font-size: 17px;
+    }
+}
+@media screen and (max-width: 1110px) {
+    .articles-template-item {
+        margin-right: 10px;
+        max-width: 290px;
+    }
+    .articles-template {
+        margin-right: -10px;
+        justify-content: flex-start;
     }
 }
 @media screen and (max-width: 1075px) {
@@ -91,7 +104,23 @@
         height: 45px;
     }
 }
+@media screen and (max-width: 789px) {
+    .articles-template-item-wrap  {
+        min-width: auto;
+    }
+}
 @media screen and (max-width: 767px) {
+    .news-template {
+        display: block;
+        &-item-wrap {
+            min-width: auto;
+        }
+        &-section {
+            .tns-controls {
+                display: none;
+            }
+        }
+    }
     .catalog-slider-img-wrap {
         .tns-controls {
             display: none;
@@ -157,6 +186,7 @@
             // }
         }
         &-cell > &-list > &-list__item &-list {
+            margin-top: 10px;
             display: none;
         }
         &-cell > &-list > &-list__item {
@@ -183,7 +213,15 @@
         }
     }
 }
+@media screen and (max-width: 730px) {
+    .catalog-slider-img-item {
+        margin-left: 0;
+    }
+}
 @media screen and (max-width: 650px) {
+    .articles-template {
+        display: block;
+    }
     .header-big-menu-left-list {
         max-width: 250px;
     }
@@ -264,6 +302,17 @@
         font-size: 14px;
     }
 }
+@media screen and (max-width: 575px) {
+    .news-template {
+        &-item {
+            padding: 10px 20px 20px 20px;
+            border: 1px solid #9A9899;
+            &__desc {
+                text-decoration: underline;
+            }
+        }
+    }
+}
 @media screen and (min-width: 561px) {
     .header-big-menu--mobile {
         display: none !important;
@@ -276,6 +325,58 @@
     .header-big-menu-wrap {
         margin-top: 20px;
         border-top: 1px solid #F1EFF0;
+    }
+}
+@media screen and (max-width: 530px) {
+    .header-search--mobile {
+        margin-right: 0;
+    }
+    .header-catalog-btn--mobile {
+        border-radius: 5px;
+        width: 40px;
+        padding: 3px;
+        border: none;
+        background-color: #FF7200;
+        // border: 2px solid #FF7200;
+        &.header-catalog-btn--active {
+            .header-catalog-btn__figure {
+                &:before, &:after {
+                    visibility: visible;
+                }
+            }
+        }
+        span {
+            // transition: none;
+        }
+    }
+    .header-catalog-btn__figure {
+        &:before, &:after {
+            visibility: hidden;
+        }
+        span {
+            top: 8.5px;
+            max-width: 20px;
+            right: 0;
+            background-color: white;
+            &:before {
+                left: -6px;
+                content: '';
+                display: block;
+                width: 3px;
+                height: 3px;
+                position: absolute;
+                // background-color: #323232;
+                border-radius: 100%;
+                background-color: white;
+            }
+        }
+        span:first-child {
+            top: 2px;
+        }
+        span:last-child {
+            top: auto;
+            bottom: 2px;
+        }
     }
 }
 @media screen and (max-width: 500px) {
@@ -295,6 +396,9 @@
     }
 }
 @media screen and (max-width: 460px) {
+    .catalog-slider-item {
+        max-width: 140px;
+    }
     .catalog-slider-img-item {
         margin-left: 0;
         width: 200px;
@@ -309,9 +413,13 @@
     }
     .catalog-slider-img-item__buy {
         z-index: -1;
-        height: 41px;
+        height: 46px;
+        width: 131px;
+        background: linear-gradient(
+            156deg
+            , #8bd4ff 55%, white 49%, #ffa401 56%);
         a {
-            font-size: 15px;
+            font-size: 10px;
         }
     }
     .catalog-slider-img-item__img {
