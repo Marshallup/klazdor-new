@@ -1,4 +1,5 @@
 @import "normalize.css";
+@import "blocks/font-awesome.scss";
 @import "vars";
 @import "mixins";
 @import "fonts";
@@ -15,6 +16,7 @@
 @import "blocks/banner-bot";
 @import "blocks/news-template";
 @import "blocks/catalog-banner";
+@import "blocks/yandex-reviews";
 @import "blocks/main";
 @import "blocks/footer";
 @import "media";
