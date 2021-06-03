@@ -44,6 +44,12 @@
     }
 }
 @media screen and (max-width: 1110px) {
+    .header-phone {
+        margin-left: 5px;
+    }
+    .header-location {
+        margin-right: 0;
+    }
     .articles-template-item {
         margin-right: 10px;
         max-width: 290px;
@@ -63,10 +69,23 @@
     .header-location__text, .header-menu__link {
         font-size: 14px;
     }
+    .header-location {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .header-top {
+        flex-wrap: wrap;
+    }
+    .header-menu {
+        max-width: 670px;
+    }
 }
 @media screen and (max-width: 991px) {
     .container {
         padding: 0 25px;
+    }
+    .img-bot {
+        max-width: 85%;
     }
 }
 @media screen and (max-width: 949px) {
@@ -125,6 +144,9 @@
     }
 }
 @media screen and (max-width: 767px) {
+    .img-bot {
+        max-width: 100%;
+    }
     .header-big-menu-left, .header-big-menu-right {
         padding-top: 20px;
     }
@@ -274,29 +296,6 @@
     //     overflow: hidden;
     // }
 }
-@media screen and (max-width: 530px) {
-    .header-search__input-wrap {
-        height: 30px;
-        flex-basis: 83%;
-    }
-    .header-search__btn {
-        flex-basis: 17%;
-    }
-    .header-catalog-btn--mobile {
-        height: 30px;
-        padding: 10px;
-        justify-content: center;
-    }
-    .header-catalog-btn__text {
-        display: none;
-    }
-    .header-catalog-btn__figure {
-        margin: 0;
-    }
-    .header-mobile-logo {
-        max-width: 100px;
-    }
-}
 @media screen and (max-width: 580px) {
     .header-big-menu {
         padding-left: 10px;
@@ -334,10 +333,30 @@
     }
 }
 @media screen and (max-width: 575px) {
+    .catalog-slider-section {
+        .container {
+            padding: 0;
+        }
+        .catalog-slider__title, .klazdor-link  {
+            padding: 0 10px;
+        }
+        .catalog-slider {
+            padding: 0 15px;
+        }
+    }
+    .footer-socials-icons {
+        margin: 10px 0;
+    }
+    .articles-template-section {
+        margin: 30px 0;
+    }
+    .section-m50 {
+        margin: 30px 0;
+    }
     .news-template {
         &-item {
             padding: 10px 20px 20px 20px;
-            border: 1px solid #9A9899;
+            // border: 1px solid #9A9899;
             &__desc {
                 text-decoration: underline;
             }
@@ -350,12 +369,26 @@
     }
 }
 @media screen and (max-width: 560px) {
+    .catalog-slider {
+        padding-bottom: 10px;
+        display: flex;
+        align-items: flex-start;
+        overflow-y: hidden;
+        overflow-x: auto;
+        &-item {
+            margin-right: 20px;
+            max-width: 200px;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
     .header-big-menu--desktop {
         display: none !important;
     }
     .header-big-menu-wrap {
         margin-top: 20px;
-        border-top: 1px solid #F1EFF0;
+        // border-top: 1px solid #F1EFF0;
     }
     .header-big-menu--mobile {
         padding-left: 0;
@@ -367,6 +400,28 @@
     }
 }
 @media screen and (max-width: 530px) {
+    .header-search__input-wrap {
+        height: 40px;
+        flex-basis: 83%;
+    }
+    .header-search__btn {
+        flex-basis: 17%;
+    }
+    .header-catalog-btn--mobile {
+        height: 40px;
+        padding: 10px;
+        justify-content: center;
+    }
+    .header-catalog-btn__text {
+        display: none;
+    }
+    .header-catalog-btn__figure {
+        margin: 0;
+        height: 26px;
+    }
+    .header-mobile-logo {
+        max-width: 100px;
+    }
     .header-search--mobile {
         margin-right: 0;
     }
@@ -393,7 +448,7 @@
             visibility: hidden;
         }
         span {
-            top: 8.5px;
+            top: 11.5px;
             max-width: 20px;
             right: 0;
             background-color: white;
@@ -410,11 +465,11 @@
             }
         }
         span:first-child {
-            top: 2px;
+            top: 4px;
         }
         span:last-child {
             top: auto;
-            bottom: 2px;
+            bottom: 4px;
         }
     }
 }
@@ -441,7 +496,7 @@
 }
 @media screen and (max-width: 460px) {
     .catalog-slider-item {
-        max-width: 140px;
+        max-width: 160px;
     }
     .catalog-slider-img-item {
         margin-left: 0;
@@ -516,6 +571,14 @@
     }
 }
 @media screen and (max-width: 450px) {
+    .catalog-slider-section {
+        .catalog-slider__title, .klazdor-link  {
+            padding: 0 5px;
+        }
+        .catalog-slider {
+            padding: 0 10px;
+        }
+    }
     .header-location__text {
         display: none;
     }

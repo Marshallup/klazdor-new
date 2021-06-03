@@ -24,13 +24,36 @@
     &-menu {
         display: flex;
         list-style-type: none;
-        width: 1100px;
-        max-width: 1100px;
+        width: 870px;
+        max-width: 870px;
         justify-content: space-between;
+        &__list {
+            margin-right: 5px;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
         &__link {
-            font-size: 16px;
+            font-size: 14px;
             color: #323232;
             text-decoration: none;
+        }
+    }
+    &-phone {
+        display: flex;
+        align-items: center;
+        margin-left: 20px;
+        text-decoration: none;
+        &__icon {
+            margin-right: 5px;
+            width: 18px;
+            height: 18px;
+            background: url("data:image/svg+xml,%3Csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='50px' height='50px' viewBox='0 0 612 612' style='enable-background:new 0 0 612 612;' xml:space='preserve'%3E%3Cg%3E%3Cg%3E%3Ccircle cx='312.954' cy='173.864' r='34.773'/%3E%3Cpolygon points='389.454,459 347.728,459 347.728,236.455 236.455,236.455 236.455,264.273 278.182,264.273 278.182,459 236.455,459 236.455,486.818 389.454,486.818 '/%3E%3Cpath d='M612,306C612,137.004,474.995,0,306,0C137.004,0,0,137.004,0,306c0,168.995,137.004,306,306,306 C474.995,612,612,474.995,612,306z M27.818,306C27.818,152.36,152.36,27.818,306,27.818S584.182,152.36,584.182,306 S459.64,584.182,306,584.182S27.818,459.64,27.818,306z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") center center/cover no-repeat;
+        }
+        &__item {
+            white-space: nowrap;
+            color: #323232;
+            font-size: 15px;
         }
     }
     &__logo {
@@ -42,7 +65,7 @@
             margin-right: 10px;
             display: flex;
             align-items: center;
-            border: 2px solid #323232;
+            border: 2px solid transparent;
             border-radius: 10px;
             font-weight: 400;
             font-size: 20px;
@@ -51,6 +74,7 @@
             cursor: pointer;
             transition: all .3s ease;
             user-select: none;
+            background: #FF7200;
             &__figure {
                 width: 28px;
                 height: 20px;
@@ -70,6 +94,7 @@
                     background: #323232;
                     position: absolute;
                     transition: transform .3s ease;
+                    background: #FFFFFF;
                 }
                 &:before {
                     top: 0;
@@ -81,25 +106,21 @@
                     bottom: 0;
                 }
             }
+            &__text {
+                color: white;
+            }
             &--active {
-                background: #FF7200;
-                border-color: transparent;
-                .header-catalog-btn__text {
-                    color: white;
-                }
                 .header-catalog-btn__figure {
                     span {
                         transform: scale(0);
                     }
                     &:before {
-                        top: 8px;
+                        top: 12px;
                         transform: rotate(-45deg);
-                        background: #FFFFFF;
                     }
                     &:after {
-                        bottom: 9px;
+                        bottom: 11px;
                         transform: rotate(45deg);
-                        background: #FFFFFF;
                     }
                 }
             }

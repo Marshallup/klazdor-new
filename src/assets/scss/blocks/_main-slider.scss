@@ -21,7 +21,7 @@
             position: absolute;
             z-index: 1;
             // background-color: red;
-            top: 60%;
+            top: calc(50% - 32px);
         }
         button[data-controls="prev"] {
             left: 50px;

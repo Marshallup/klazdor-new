@@ -13,47 +13,51 @@ document.addEventListener('DOMContentLoaded', function(event) {
         autoplayTimeout: 3000
         // navContainer: '.main-slider-navigation'
     });
-    const catalogSliders = document.querySelectorAll('.catalog-slider');
+    // const catalogSliders = document.querySelectorAll('.catalog-slider');
 
-    for(let i = 0; i < catalogSliders.length; i++) {
-      tns({
-        container: catalogSliders[i],
-        // items: 2,
-        slideBy: 1,
-        autoplay: false,
-        nav: false,
-        loop: false,
-        rewind: true,
-        gutter: 10,
-        swipeAngle: false,
-        // edgePadding: 30,
-        // "autoWidth": true,
-        items: 2.3,
-        responsive: {
-          200: {
-            "autoWidth": true,
-          },
-          460: {
-            items: 2.3,
-            "autoWidth": false
-          },
-          500: {
-            swipeAngle: true,
-            edgePadding: 0,
-            // "autoWidth": false
-          },
-          630: {
-            items: 3,
-          },
-          1006: {
-            items: 4,
-          },
-          1208: {
-            items: 5,
-          }
-        }
-      })
-    };
+    // for(let i = 0; i < catalogSliders.length; i++) {
+    //   tns({
+    //     container: catalogSliders[i],
+    //     // items: 2,
+    //     slideBy: 1,
+    //     autoplay: false,
+    //     nav: false,
+    //     loop: false,
+    //     rewind: true,
+    //     gutter: 10,
+    //     swipeAngle: false,
+    //     // edgePadding: 30,
+    //     // "autoWidth": true,
+    //     items: 2.3,
+    //     responsive: {
+    //       200: {
+    //         "autoWidth": true,
+    //       },
+    //       460: {
+    //         items: 2.3,
+    //         "autoWidth": false
+    //       },
+    //       500: {
+    //         swipeAngle: true,
+    //         edgePadding: 0,
+    //         // "autoWidth": false
+    //       },
+    //       630: {
+    //         items: 3,
+    //       },
+    //       1006: {
+    //         items: 4,
+    //       },
+    //       1208: {
+    //         items: 5,
+    //       }
+    //     }
+    //   })
+    // };
+
+    let flags = {};
+    let slidersEls = {};
+    removeCatalogSlider();
 
     tns({
       container: '.partners-slider',
@@ -202,6 +206,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
     $(window).resize(function(event) {
       checkWidthForSliders();
+      removeCatalogSlider();
     });
 
     checkWidthForSliders();
@@ -287,6 +292,62 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
     };
     
+
+    function removeCatalogSlider() {
+      const width = $(window).width();
+      let sliders = document.querySelectorAll('.catalog-slider');
+
+      for (let i = 0; i < sliders.length; i++) {
+        let item = sliders[i];
+
+        if (width >= 560 && !flags[i]) {
+          // slidersEls[i] = item;
+          flags[i] = true;
+
+          slidersEls[i] = tns({
+            container: item,
+            // items: 2,
+            slideBy: 1,
+            autoplay: false,
+            nav: false,
+            loop: false,
+            rewind: true,
+            gutter: 10,
+            swipeAngle: false,
+            // edgePadding: 30,
+            // "autoWidth": true,
+            items: 2.3,
+            responsive: {
+              200: {
+                "autoWidth": true,
+              },
+              460: {
+                items: 2.3,
+                "autoWidth": false
+              },
+              500: {
+                swipeAngle: true,
+                edgePadding: 0,
+                // "autoWidth": false
+              },
+              630: {
+                items: 3,
+              },
+              1006: {
+                items: 4,
+              },
+              1208: {
+                items: 5,
+              }
+            }
+          })
+
+        } else if (width < 560 && flags[i]) {
+          flags[i] = false;
+          slidersEls[i].destroy();
+        }
+      } 
+    };
 
     function hideAllListMenu(childList) {
       const parentList = $('.header-big-menu-list')
