@@ -60,7 +60,7 @@ const path = {
     js: "src/assets/js/**/*.js",
     css: "src/assets/scss/**/*.scss",
     fonts: "src/assets/fonts/*.*",
-    images: "src/assets/img/**/*.{jpg,png,svg,gif,ico}",
+    images: "src/assets/img/**/*.{jpg,jpeg,png,svg,gif,ico}",
   },
   clean: "./dist/",
 };

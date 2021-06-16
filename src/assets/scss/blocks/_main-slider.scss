@@ -1,5 +1,13 @@
 .main-slider {
-    margin: 10px 0 30px 0;
+    margin: 10px 0 15px 0;
+    &--first {
+        .main-slider-item {
+            display: none;
+        }
+        .main-slider-item:first-child {
+            display: block;
+        }
+    }
     .tns-outer {
         position: relative;
     }
@@ -13,9 +21,9 @@
     .tns-controls {
         button {
             font-size: 0;
-            width: 65px;
-            height: 32px;
-            background: url('../img/icons/main-slider-arrow.svg') center center/cover no-repeat;
+            width: 36px;
+            height: 22px;
+            background: url('../img/icons/main-slider-arrow.svg') center center/contain no-repeat;
             border: none;
             outline: none;
             position: absolute;

@@ -51,6 +51,8 @@
         display: flex;
         align-items: center;
         &__img {
+            display: block;
+            text-decoration: none;
             max-width: 30px;
             margin-right: 20px;
         }

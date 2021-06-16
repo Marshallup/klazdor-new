@@ -42,7 +42,7 @@
             width: 260px;
             max-width: 100%;
             background: #FFFFFF;
-            box-shadow: 0px 10px 15px rgba(50, 50, 50, 0.1);
+            // box-shadow: 0px 10px 15px rgba(50, 50, 50, 0.1);
             border-radius: 10px;
             // margin: 10px;
         }
@@ -163,14 +163,21 @@
             }
         }
         &__btn {
-            padding: 5px 9px;
-            width: 100px;
+            display: inline-block;
+            padding: 8px 20px;
+            text-align: center;
+            // width: 100px;
             background: #FF7200;
             border-radius: 5px;
             font-size: 16px;
             color: #FFFFFF;
             margin: 0 auto;
             cursor: pointer;
+            &-wrap {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
         }
         &__discount {
             padding: 1px 9px;

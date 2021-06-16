@@ -1,18 +1,24 @@
+
+
 document.addEventListener('DOMContentLoaded', function(event) {
 
+    $('.main-slider').removeClass('main-slider--first')
 
     const mainSlider = tns({
-        container: '.main-slider-body',
-        items: 1,
-        slideBy: 'page',
-        autoplay: true,
-        navPosition: 'bottom',
-        loop: false,
-        rewind: true,
-        autoplayButtonOutput: false,
-        autoplayTimeout: 3000
-        // navContainer: '.main-slider-navigation'
-    });
+      container: '.main-slider-body',
+      items: 1,
+      slideBy: 'page',
+      autoplay: true,
+      navPosition: 'bottom',
+      loop: false,
+      rewind: true,
+      autoplayButtonOutput: false,
+      autoplayTimeout: 3000
+  });
+
+
+
+
     // const catalogSliders = document.querySelectorAll('.catalog-slider');
 
     // for(let i = 0; i < catalogSliders.length; i++) {
@@ -151,7 +157,13 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
     const mobileListParent = $('.header-big-menu-list__item--parent');
 
+    const menuClass = 'header-big-menu-list';
+
+    const menuClassItemClassParent = 'header-big-menu-list__item--parent';
+
     const headerListActiveClass = 'header-big-menu-list__item--active';
+
+    const mainParentListClass = 'header-big-menu-list-main';
 
     mobileListParent.click(function(event) {
 
@@ -164,18 +176,38 @@ document.addEventListener('DOMContentLoaded', function(event) {
       
       const $this = $(this);
 
-      const childList = $this.children('.header-big-menu-list');
+      const childList = $this.children('.' + menuClass);
 
-      if (!$this.closest('.' + headerListActiveClass).length) {
-        hideAllListMenu(childList);
-      }
+      const $parent = $this.parent();
 
       $this.toggleClass(headerListActiveClass);
+
+      if ($parent.hasClass(mainParentListClass) && $parent.children('.' + headerListActiveClass).length > 1) {
+        hideAllListMenu();
+        $this.toggleClass(headerListActiveClass);
+        console.log('ww')
+      } else if ($parent.children('.' + headerListActiveClass).length > 1) {
+        console.log('child')
+        hideListInParent($this, $parent, headerListActiveClass);
+      }
+
+      // if ($parent.hasClass(mainParentListClass) && $parent.find('.' + headerListActiveClass).length) {
+      //   hideAllListMenu();
+      //   // $this.toggleClass(headerListActiveClass);
+      // }
+      // if ($this.parent().find('.' + headerListActiveClass).length) {
+      //   hideAllListMenu();
+      // }
+      // if (!$this.closest('.' + headerListActiveClass).length) {
+      //   // console.log('sss')
+      //   hideAllListMenu();
+      // }
 
 
       if ($this.hasClass(headerListActiveClass)) {
         childList.slideDown(300);
       } else {
+        // console.log(childList)
         hideAllListMenu(childList);
       }
 
@@ -300,7 +332,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
       for (let i = 0; i < sliders.length; i++) {
         let item = sliders[i];
 
-        if (width >= 560 && !flags[i]) {
+        if (width >= 576 && !flags[i]) {
           // slidersEls[i] = item;
           flags[i] = true;
 
@@ -342,7 +374,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
             }
           })
 
-        } else if (width < 560 && flags[i]) {
+        } else if (width < 576 && flags[i]) {
           flags[i] = false;
           slidersEls[i].destroy();
         }
@@ -350,15 +382,31 @@ document.addEventListener('DOMContentLoaded', function(event) {
     };
 
     function hideAllListMenu(childList) {
-      const parentList = $('.header-big-menu-list')
-      const allItemChild =  parentList.find('.header-big-menu-list__item--parent');
-        const allListChild = parentList.find('.header-big-menu-list');
+      if (childList)  {
+        childList.slideUp(300);
+        return;
+      }
+      const parentList = $('.' + menuClass)
+      const allItemChild =  parentList.find('.' + menuClassItemClassParent);
+        const allListChild = parentList.find('.' + menuClass);
         if (allItemChild.length > 0) {
           allItemChild.removeClass(headerListActiveClass);
           allListChild.slideUp(300);
         }
-        if (childList)  {childList.slideUp(300);}
     };
+
+    function hideListInParent($this, $parent, activeClass) {
+      var findClass = '.' + activeClass;
+      if ($parent.children(findClass).length > 1) {
+        var childrens = $parent.find(findClass);
+        console.log(childrens)
+        childrens.removeClass(activeClass)
+        childrens.find('.' + menuClass).slideUp(300);
+
+        $this.addClass(activeClass);
+        $this.slideDown(300)
+      }
+    }
 
 
 

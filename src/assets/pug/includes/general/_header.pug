@@ -214,12 +214,20 @@ header.header
 							a(href="#").header-big-menu-breadcrumps-item
 								span Чулки
 						.header-big-menu__title Каталог
-						ul.header-big-menu-list
+						ul.header-big-menu-list.header-big-menu-list-main
 							li.header-big-menu-list__item.header-big-menu-list__item--parent.header-big-menu-list__item--sale
 								.header-big-menu-list__item-inner
 									a(href="#").header-big-menu-list__link Распродажа
 								span.header-big-menu-list__arrow
 								ul.header-big-menu-list
+									li.header-big-menu-list__item.header-big-menu-list__item--parent
+										.header-big-menu-list__item-inner
+											a(href="#").header-big-menu-list__link Чулки
+										span.header-big-menu-list__arrow
+										ul.header-big-menu-list
+											li.header-big-menu-list__item
+												.header-big-menu-list__item-inner
+													a(href="#").header-big-menu-list__link Чулки1
 									li.header-big-menu-list__item.header-big-menu-list__item--parent
 										.header-big-menu-list__item-inner
 											a(href="#").header-big-menu-list__link Чулки
@@ -257,4 +265,24 @@ header.header
 							li.header-big-menu-list__item
 								.header-big-menu-list__item-inner
 									a(href="#").header-big-menu-list__link Бинты и кинезио-тейпы
+	.header-nav-panel
+		.container
+			.header-nav-panel-body
+				.header-nav-panel-inner
+					a(href="#").header-nav-panel-item
+						.header-nav-panel-item__img.header-nav-panel-item__img-home
+						.header-nav-panel-item__title Главная
+					a(href="#").header-nav-panel-item
+						.header-nav-panel-item__img.header-nav-panel-item__img-search
+						.header-nav-panel-item__title Каталог
+					a(href="#").header-nav-panel-item
+						.header-nav-panel-item__img.header-nav-panel-item__img-cart
+						.header-nav-panel-item__title Корзина
+					a(href="#").header-nav-panel-item
+						.header-nav-panel-item__img.header-nav-panel-item__img-favorites
+						.header-nav-panel-item__title Избранное
+					a(href="#").header-nav-panel-item
+						.header-nav-panel-item__img.header-nav-panel-item__img-user
+						.header-nav-panel-item__title Войти
+
 				
